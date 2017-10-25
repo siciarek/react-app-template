@@ -1,3 +1,3 @@
-# React app template
+# React Application Template
 
-React app template with Bulma css framework.
+React application template with Bulma css framework.
