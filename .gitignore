@@ -35,3 +35,4 @@ public/doc/pdf/
 /public/service/data/
 package-lock.json
 public/service/src/config.ini
+/jest*
