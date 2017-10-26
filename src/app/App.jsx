@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import {Header, Footer} from './widgets'
 import {connect} from 'react-redux'
 import './App.css'
@@ -16,6 +17,14 @@ const App = ({children, router}) => {
 
     <Footer/>
   </div>
+}
+
+App.propTypes = {
+
+}
+
+App.defaultProps = {
+
 }
 
 const mapStateToProps = (state) => {

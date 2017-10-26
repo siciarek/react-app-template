@@ -1,8 +1,16 @@
+/**
+ * PageNotFound.spec.js
+ */
 import React from 'react'
 import {getProps, renderComponent, renderShallowComponent} from '../../utils/testHelper'
+import {lorem} from 'faker'
+import {expect} from 'chai'
+import {map} from 'lodash'
+
 import PageNotFound from './PageNotFound'
 
 describe('PageNotFound', () => {
+
   let element = null
 
   beforeEach(() => {
@@ -10,7 +18,10 @@ describe('PageNotFound', () => {
   })
 
   it('can render without error', () => {
-    expect(() =>  { const component = renderComponent(element)}).not.toThrow()
+
+    expect(() =>  {
+      const component = renderComponent(element)
+    }).not.to.throw()
   })
 
   it('has default props set up', () => {
@@ -18,8 +29,8 @@ describe('PageNotFound', () => {
     const component = renderComponent(element)
     const props = getProps(component)
 
-    Object.keys(PageNotFound.defaultProps).map(key => {
-      expect(props[key]).toBe(PageNotFound.defaultProps[key])
+    map(element.defaultProps, (val, key) => {
+      expect(props[key]).to.equal(val)
     })
   })
 })

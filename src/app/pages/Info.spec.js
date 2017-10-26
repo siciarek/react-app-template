@@ -1,5 +1,5 @@
 /**
- * Home.spec.js
+ * Info.spec.js
  */
 import React from 'react'
 import {getProps, renderComponent, renderShallowComponent} from '../../utils/testHelper'
@@ -7,14 +7,14 @@ import {lorem} from 'faker'
 import {expect} from 'chai'
 import {map} from 'lodash'
 
-import Home from './Home'
+import Info from './Info'
 
-describe('Home', () => {
+describe('Info', () => {
 
   let element = null
 
   beforeEach(() => {
-    element = <Home/>
+    element = <Info/>
   })
 
   it('can render without error', () => {
