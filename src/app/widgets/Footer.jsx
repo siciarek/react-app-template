@@ -1,10 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import config from '../config'
+import {Container, Content, Icon} from 'bulma-react'
 
 const Footer = () =>
   <footer className="footer">
-    <div className="container">
-      <div className="content has-text-centered">
+    <Container>
+      <Content has-text-centered={'true'}>
         <p>
           <strong>{config.app.name}</strong> by <a href={process.env.REACT_APP_AUTHOR_WEBSITE}>{config.app.author}</a>.
           The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
@@ -12,11 +14,19 @@ const Footer = () =>
         </p>
         <p>
           <a className="icon" href={process.env.REACT_APP_REPO_URL}>
-            <i className="fa fa-github"/>
+            <Icon icon="github"/>
           </a>
         </p>
-      </div>
-    </div>
+      </Content>
+    </Container>
   </footer>
 
-export default (Footer)
+Footer.propTypes = {
+
+}
+
+Footer.defaultProps = {
+
+}
+
+export default Footer

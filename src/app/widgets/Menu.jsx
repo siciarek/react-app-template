@@ -1,16 +1,12 @@
 import React from 'react'
-import {withRouter} from 'react-router'
+import PropTypes from 'prop-types'
 
-const Menu = ({router}) => {
+const Menu = ({router, routes}) => {
 
-  const routes = {
-    '/': 'Home',
-    '/info': 'Info',
-    '/contact': 'Contact'
-  }
+  const currentRoute = router.getCurrentLocation().pathname
 
-  const tabs = Object.keys(routes).map(route =>
-    <li key={0} className={route === router.getCurrentLocation().pathname ? 'is-active' : null}>
+  const tabs = Object.keys(routes).map((route, i) =>
+    <li key={i} className={route === currentRoute ? 'is-active' : null}>
       <a onClick={() => router.push(route)}>
         {routes[route]}
       </a>
@@ -20,4 +16,21 @@ const Menu = ({router}) => {
   return <ul>{tabs}</ul>
 }
 
-export default withRouter(Menu)
+Menu.propTypes = {
+  router: PropTypes.object.isRequired,
+  routes: PropTypes.object.isRequired,
+}
+
+Menu.defaultProps = {
+  router: {
+    push: e => {},
+    getCurrentLocation: () => ({pathname: '/'})
+  },
+  routes: {
+    '/': 'Home',
+    '/info': 'Info',
+    '/contact': 'Contact'
+  }
+}
+
+export default Menu

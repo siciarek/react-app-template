@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import config from '../config'
-import {Menu} from '../widgets'
+import {Menu, Submenu} from '../widgets'
 
-const Header = ({title, subtitle}) => {
-  return <section className="hero is-primary">
+const Header = ({title, subtitle, router}) => {
+  return [<section className="hero is-primary">
     <div className="section hero-body">
       <div className="container">
         <div className="columns is-vcentered">
@@ -25,11 +25,26 @@ const Header = ({title, subtitle}) => {
     <div className="hero-foot">
       <div className="container">
         <nav className="tabs is-boxed">
-          <Menu/>
+          <Menu router={router}/>
         </nav>
       </div>
     </div>
-  </section>
+  </section>,
+    <nav className="navbar has-shadow">
+      <div className="container">
+        <div className="navbar-tabs">
+          <a className="navbar-item is-tab is-active" href="https://bulma.io/documentation/overview/start/">
+            Start
+          </a>
+          <a className="navbar-item is-tab " href="https://bulma.io/documentation/overview/customize/">
+            Customize
+          </a>
+          <a className="navbar-item is-tab " href="https://bulma.io/documentation/overview/classes/">
+            Classes
+          </a>
+        </div>
+      </div>
+    </nav>]
 }
 
 Header.propTypes = {
@@ -42,4 +57,4 @@ Header.defaultProps = {
   subtitle: config.app.description,
 }
 
-export default (Header)
+export default Header

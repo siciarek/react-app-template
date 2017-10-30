@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Title} from 'bulma-react'
 
 const Home = ({title}) =>
   <div>
-    <h1 className="title">{title}</h1>
+    <Title>{title}</Title>
     <pre className="panel-block">
       {`Nunquam visum ionicis tormento.
 Est albus ionicis tormento, cesaris.

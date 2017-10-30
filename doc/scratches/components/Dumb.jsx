@@ -15,4 +15,4 @@ Dumb.defaultProps = {
 
 }
 
-export default (Dumb)
+export default Dumb

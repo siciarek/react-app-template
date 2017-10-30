@@ -2,29 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import {Header, Footer} from './widgets'
 import {connect} from 'react-redux'
+import {Section, Container} from 'bulma-react'
 import './App.css'
+import {Submenu} from './widgets'
 
 const App = ({children, router}) => {
 
-  return <div>
-    <Header/>
+  return [
+    <Header router={router}/>,
 
-    <section className="section">
-      <div className="container">
+    <Section>
+      <Container>
         {children}
-      </div>
-    </section>
+      </Container>
+    </Section>,
 
-    <Footer/>
-  </div>
+    <Footer/>]
 }
 
 App.propTypes = {
-
+  children: PropTypes.any,
 }
 
 App.defaultProps = {
-
+  children: [],
 }
 
 const mapStateToProps = (state) => {
