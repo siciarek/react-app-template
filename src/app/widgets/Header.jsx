@@ -4,7 +4,8 @@ import config from '../config'
 import {Menu, Submenu} from '../widgets'
 
 const Header = ({title, subtitle, router}) => {
-  return [<section className="hero is-primary">
+  return <div>
+  <section className="hero is-primary">
     <div className="section hero-body">
       <div className="container">
         <div className="columns is-vcentered">
@@ -29,10 +30,10 @@ const Header = ({title, subtitle, router}) => {
         </nav>
       </div>
     </div>
-  </section>,
+  </section>
     <nav className="navbar has-shadow">
       <div className="container">
-        <div className="navbar-tabs">
+        <div className="navbar-brand">
           <a className="navbar-item is-tab is-active" href="https://bulma.io/documentation/overview/start/">
             Start
           </a>
@@ -44,7 +45,8 @@ const Header = ({title, subtitle, router}) => {
           </a>
         </div>
       </div>
-    </nav>]
+    </nav>
+    </div>
 }
 
 Header.propTypes = {

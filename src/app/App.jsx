@@ -4,11 +4,10 @@ import {Header, Footer} from './widgets'
 import {connect} from 'react-redux'
 import {Section, Container} from 'bulma-react'
 import './App.css'
-import {Submenu} from './widgets'
 
 const App = ({children, router}) => {
 
-  return [
+  return <div>
     <Header router={router}/>,
 
     <Section>
@@ -17,7 +16,8 @@ const App = ({children, router}) => {
       </Container>
     </Section>,
 
-    <Footer/>]
+    <Footer/>
+  </div>
 }
 
 App.propTypes = {
